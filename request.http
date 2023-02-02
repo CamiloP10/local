@@ -1,0 +1,32 @@
+###
+GET http://localhost:9001/api/pruebas HTTP/1.1
+
+###
+GET http://localhost:9001/api/pruebas/prod_id HTTP/1.1
+
+###
+POST http://localhost:9001/api/pruebas HTTP/1.1
+Content-Type: application/json
+
+{
+    "prod_id": 7,
+    "producto":"prueba producto 7",
+    "PCompra":7,
+    "PVenta":7,
+    "unidades":7
+}
+
+###
+DELETE http://localhost:9001/api/pruebas/prod_id/6 HTTP/1.1
+
+###
+PUT http://localhost:9001/api/pruebas/prod_id/6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "prod_id": 6,
+    "producto":"prueba producto 6 editado",
+    "PCompra":6,
+    "PVenta":6,
+    "unidades":6
+}
