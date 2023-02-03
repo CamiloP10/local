@@ -4,6 +4,7 @@ const myconn=require('express-myconnection')// constante para crear conexion a r
 const routes=require('./routes')//toma la variable de route.js
 const cors = require('cors')// toma el cors instalado
 
+
 const app=express() // crear el constructor e instanciar a la variable
 
 const config = require('./config.js') // para las variables de entorno
@@ -28,6 +29,8 @@ const dbOptions={// configuracion para conectar a la base de datos
     database:'railway'*/
 
     // con variables de entorno
+    
+    PORT2: config.PORT2,
     host: config.host_db,
     port: config.port_db,
     user:config.user_db,
@@ -48,7 +51,9 @@ app.use('/api',routes)//acceder mediante /api a la informacion guardada en 'rout
 
 
 
-//app.listen(app.get('port'),()=>{// escuchar el puerto, funcion tipo flecha
-app.listen(process.env.port,()=>{// escuchar el puerto, funcion tipo flecha
+//app.listen(app.get('port'),()=>{// escuchar el puerto, funcion tipo flecha funcional
+/*app.listen(process.env.port,()=>{// escuchar el puerto, funcion tipo flecha
     console.log(`server running to ${app.get('port')}`)
-})
+})*/
+app.listen(app.get('PORT2'))
+console.log('Server on port', app.get('PORT2'))
