@@ -48,6 +48,7 @@ app.use('/api',routes)//acceder mediante /api a la informacion guardada en 'rout
 
 
 
-app.listen(app.get('port'),()=>{// escuchar el puerto, funcion tipo flecha
+//app.listen(app.get('port'),()=>{// escuchar el puerto, funcion tipo flecha
+app.listen(process.env.port,()=>{// escuchar el puerto, funcion tipo flecha
     console.log(`server running to ${app.get('port')}`)
 })
