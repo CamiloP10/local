@@ -10,23 +10,22 @@ Content-Type: application/json
 
 {
 
-    "producto":"prueba producto 8",
-    "PCompra":8,
-    "PVenta":8,
-    "unidades":8
+    "producto":"prod 4",
+    "PCompra":4,
+    "PVenta":4,
+    "unidades":4
 }
 
 ###
-DELETE http://localhost:9001/api/pruebas/prod_id/6 HTTP/1.1
+DELETE http://localhost:9001/api/pruebas/prod_id/3 HTTP/1.1
 
 ###
-PUT http://localhost:9001/api/pruebas/prod_id/6 HTTP/1.1
+PUT http://localhost:9001/api/pruebas/prod_id/3 HTTP/1.1
 Content-Type: application/json
 
 {
-    "prod_id": 6,
-    "producto":"prueba producto 6 editado",
-    "PCompra":6,
-    "PVenta":6,
-    "unidades":6
+    "producto":"prueba producto 3 editado",
+    "PCompra":3,
+    "PVenta":3,
+    "unidades":3
 }
