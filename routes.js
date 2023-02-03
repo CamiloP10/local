@@ -61,11 +61,13 @@ routes.put('/:table/:field/:prod_id',(req,res)=>{//obtener mediante / un requeri
     })
 })
 
-// route for select----------------------- get para obtener el numero mayor
-routes.get('/:table/:field',(req,res)=>{//obtener mediante / un requerimiento y una respuesta
+// route for valid----------------------- get para validar usu y pwd
+//SELECT * FROM usuarios WHERE usu_email = ":nombre" && usu_clave=":pwd";
+routes.get('/:table/validar/:nombre/:pwd',(req,res)=>{//obtener mediante / un requerimiento y una respuesta
     req.getConnection((err,conn)=>{ //conexion a la base de datos (error,mensaje)
         if(err)return res.send(err) // retornar el error en caso de que llegue
-        var ssql='select MAX('+ req.params.field +') from ' + req.params.table
+        var ssql='select * from '+req.params.table+" where usu_email = '" + req.params.nombre + "' && usu_clave = '"+req.params.pwd+"'"
+    
         conn.query(ssql,(err,rows)=>{//realizar la peticion de filas de la tabla
             if(err)return res.send(err)
 

@@ -2,7 +2,7 @@
 GET http://localhost:9001/api/pruebas HTTP/1.1
 
 ###
-GET http://localhost:9001/api/pruebas/prod_id HTTP/1.1
+GET http://localhost:9001/api/inventario/prod_id HTTP/1.1
 
 ###
 POST http://localhost:9001/api/pruebas HTTP/1.1
