@@ -10,7 +10,7 @@ const config = require('./config.js') // para las variables de entorno
 
 app.use(cors())// usa la variable cors
 
-app.set('port', config.port_server || 3001)// definir el puerto
+app.set('port', config.port_server)// definir el puerto
 
 const dbOptions={// configuracion para conectar a la base de datos
     // local host

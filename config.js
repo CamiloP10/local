@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const port_server = process.env.PORT_SERVER
+const port_server = process.env.PORT_SERVER || 3002
 const port_db= process.env.PORT_DB
 const user_db= process.env.USER_DB
 const password_db = process.env.PASSWORD_DB
