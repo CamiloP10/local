@@ -1,5 +1,5 @@
 const express=require('express') // añade a express las librerias descargadas y usar servidores
-const mysql=require('mysql') // constante para usar los paquetes mysql instalados
+const mysql=require('mysql2') // constante para usar los paquetes mysql instalados
 const myconn=require('express-myconnection')// constante para crear conexion a repositorio o base de datos
 const routes=require('./routes')//toma la variable de route.js
 const cors = require('cors')// toma el cors instalado
