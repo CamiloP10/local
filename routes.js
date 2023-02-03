@@ -61,7 +61,7 @@ routes.put('/:table/:field/:prod_id',(req,res)=>{//obtener mediante / un requeri
     })
 })
 
-// route for select-----------------------
+// route for select----------------------- get para obtener el numero mayor
 routes.get('/:table/:field',(req,res)=>{//obtener mediante / un requerimiento y una respuesta
     req.getConnection((err,conn)=>{ //conexion a la base de datos (error,mensaje)
         if(err)return res.send(err) // retornar el error en caso de que llegue

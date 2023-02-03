@@ -9,11 +9,11 @@ POST http://localhost:9001/api/pruebas HTTP/1.1
 Content-Type: application/json
 
 {
-    "prod_id": 7,
-    "producto":"prueba producto 7",
-    "PCompra":7,
-    "PVenta":7,
-    "unidades":7
+
+    "producto":"prueba producto 8",
+    "PCompra":8,
+    "PVenta":8,
+    "unidades":8
 }
 
 ###

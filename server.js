@@ -5,17 +5,35 @@ const routes=require('./routes')//toma la variable de route.js
 const cors = require('cors')// toma el cors instalado
 
 const app=express() // crear el constructor e instanciar a la variable
+
+const config = require('./config.js') // para las variables de entorno
+
 app.use(cors())// usa la variable cors
 
-app.set('port',9001)// definir el puerto
+app.set('port', config.port_server || 3001)// definir el puerto
 
 const dbOptions={// configuracion para conectar a la base de datos
-    host:'localhost',
+    // local host
+    /*host:'localhost',
     port:'3306',
     user:'prueba',
     password:'prueba',
-    database:'db2022'
-}
+    database:'db2022'*/
+
+    // con db en railway
+    /*host:'containers-us-west-139.railway.app',
+    port:'6545',
+    user:'root',
+    password:'NrpEhJPs3j4ZGIQ6loE3',
+    database:'railway'*/
+
+    // con variables de entorno
+    host: config.host_db,
+    port: config.port_db,
+    user:config.user_db,
+    password:config.password_db,
+    database: config.name_db
+} 
 
 //middelwares (porceso intermedio entre una conexion y una respuesta)
 app.use(myconn(mysql,dbOptions,'single'))//usar el express para conecar con myconn (db, config de db,tipo de conexion)
