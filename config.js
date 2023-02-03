@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const PORT2 = process.env.PORT2 || 3004 //tutorial
+const PORT = process.env.PORT || 3004 //tutorial
 
 
 const port_server = process.env.PORT_SERVER || 3002
@@ -17,5 +17,5 @@ module.exports={
     password_db,
     name_db,
     host_db,
-    PORT2
+    PORT
 } 

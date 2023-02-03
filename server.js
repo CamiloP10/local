@@ -5,15 +5,18 @@ const routes=require('./routes')//toma la variable de route.js
 const cors = require('cors')// toma el cors instalado
 
 
+
 const app=express() // crear el constructor e instanciar a la variable
 
 const config = require('./config.js') // para las variables de entorno
 
 app.use(cors())// usa la variable cors
 
-app.set('port', config.port_server)// definir el puerto
+//app.set('port', config.port_server)// definir el puerto funcionl
+app.set('PORT', config.PORT)
 
 const dbOptions={// configuracion para conectar a la base de datos
+
     // local host
     /*host:'localhost',
     port:'3306',
@@ -30,7 +33,7 @@ const dbOptions={// configuracion para conectar a la base de datos
 
     // con variables de entorno
     
-    PORT2: config.PORT2,
+    PORT: config.PORT,
     host: config.host_db,
     port: config.port_db,
     user:config.user_db,
@@ -55,5 +58,5 @@ app.use('/api',routes)//acceder mediante /api a la informacion guardada en 'rout
 /*app.listen(process.env.port,()=>{// escuchar el puerto, funcion tipo flecha
     console.log(`server running to ${app.get('port')}`)
 })*/
-app.listen(app.get('PORT2'))
-console.log('Server on port', app.get('PORT2'))
+app.listen(app.get('PORT'))
+console.log('Server on port', app.get('PORT'))
