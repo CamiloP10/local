@@ -14,7 +14,7 @@ routes.get('/:table',(req,res)=>{//obtener mediante / un requerimiento y una res
             res.json(rows)
         })
     })
-})
+})//
 
 // route for insert----------------------
 routes.post('/:table',(req,res)=>{//obtener mediante / un requerimiento y una respuesta
